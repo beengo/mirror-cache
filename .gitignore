@@ -1,0 +1,4 @@
+data
+*.exe
+vendor
+debug

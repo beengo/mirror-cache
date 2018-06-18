@@ -1,0 +1,30 @@
+listen: ":80"
+blocksize: 8192
+
+mirrors:
+  - name: ubuntu
+    prefix: /ubuntu
+    proxytarget: https://mirrors.tuna.tsinghua.edu.cn
+    expire: 3600
+    localdir: data/ubuntu
+  - name: centos
+    prefix: /centos
+    proxytarget: https://mirrors.tuna.tsinghua.edu.cn
+    expire: 3600
+    localdir: data/centos
+
+logger:
+  file:
+    filepath: 'data/logs/access.log'
+    console: true
+  redis:
+    host: '127.0.0.1'
+    port: 3369
+    db: 1
+  elasticsearch:
+    - url: http://127.0.0.1:9200
+      username: es
+      pasword: es
+    - url: http://127.0.0.1:9000
+      username:
+      password:
